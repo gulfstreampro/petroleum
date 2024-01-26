@@ -56,7 +56,7 @@
 
 <body>
   <div id="loading-screen">
-    <img src="/textures/loading1.png" alt="Loading...">
+    <img src="./textures/loading1.png" alt="Loading...">
     <div id="loading-progress">
       <div id="loading-progress-fill"></div>
     </div>
@@ -91,7 +91,7 @@
 
       // add model
       var loader = new THREE.GLTFLoader();
-      loader.load('/model/petroleum.gltf', function (gltf) {
+      loader.load('./model/petroleum.gltf', function (gltf) {
         model = gltf.scene;
         model.scale.set(0.3, 0.3, 0.3);
         // add emissive materials to the model and the tracks
@@ -142,7 +142,7 @@
         // load HDR environment map
         new THREE.RGBELoader()
           .setDataType(THREE.UnsignedByteType)
-          .setPath('/textures/')
+          .setPath('./textures/')
           .load('e12.hdr', function (texture) {
             var envMap = new THREE.PMREMGenerator(renderer)
               .fromEquirectangular(texture)
